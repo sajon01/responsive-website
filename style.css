@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color: #313336;
+    justify-content: space-between;
+    padding: 0px 70px 0px 80px;
+    align-items: center;
+}
+.main-logo{
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+nav > ul {
+    display: flex;
+}
+nav > ul > li{
+    list-style-type: none;
+}
+nav > ul > li > a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 25px 15px;
+    transition: 0.5s;
+}
+nav > ul > li > a:hover{
+    background-color: #505257e4;
+}
+.menu-btn{
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+#click{
+    display: none;
+}
+
+/* main area */
+.main-area{
+    background-image: url(images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+}
+
+/* first section */
+
+#first-section{
+    background-color: #26282a;
+    padding: 50px 0;
+}
+.section-title{
+    color: rgb(226, 223, 223);
+    padding-bottom: 50px;
+    text-align: center;
+    text-transform: capitalize;
+}
+.service-parent{
+    width: 60%;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 10px;
+    
+}
+.single-service{
+    background-color: whitesmoke;
+    width: 250px;
+    padding: 15px;
+    box-shadow: 2px 2px 5px whitesmoke;
+    border: 1px solid #26282a;
+}
+.single-service i{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+.single-service > h3{
+    padding-bottom: 10px;
+}
+
+/* second section */
+
+#second-section{
+    padding: 50px 0;
+}
+#second-section > h3{
+    color: rgb(67, 49, 49);
+    padding-bottom: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 25px;
+}
+
+.parent-div{
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.single-div-img > img{
+    width: 350px;
+}
+.single-div-text{
+    width: 350px;
+    margin-top: 50px;
+    padding-right: 15px;
+}
+.single-div-text > h4{
+    text-transform: capitalize;
+    color: brown;
+    margin-bottom: 30px;
+}
+.single-div-text > h2{
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+.single-div-text > p{
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+}
+.single-div-text > button{
+    background-color: brown;
+    border: none;
+    color: whitesmoke;
+    font-size: 17px;
+    text-transform: capitalize;
+    padding: 5px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+.single-div-text > button:hover{
+    background-color: rgb(53, 14, 14);
+}
+/* responsive work start  */
+
+@media only screen and (max-width: 688px){
+    .menu-btn{
+        display: block;
+    }
+    #click:checked ~ ul{
+        left: 0%;
+    }
+    
+    nav > ul {
+        position: fixed;
+        background-color: #2a2b2b72;
+        top: 69px;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        transition: all 0.5s ease;
+        
+    }
+    #click:checked ~ .menu-btn i::before{
+        content: "\58";
+    }
+    nav > ul > li{
+        margin: 20px 0;
+        background: none;
+    }
+    nav > ul > li > a:hover{
+        background: none;
+        color: red;
+    }
+
+    /* first section of main tag media query start here */
+   
+    .service-parent{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 100vw;
+        place-items: center;
+    }
+    .single-service{
+        width: 75%;
+    }
+ 
+ /* second section of main tag media query start here */
+ .parent-div{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+.single-div-img > img{
+    width: 70%;
+    margin-left: 50px;
+}
+.single-div-text{
+    width: 70%;
+    margin: auto;
+}
+.single-div-text > h2{
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+.single-div-text > h4{
+    text-transform: capitalize;
+    color: brown;
+    margin-bottom: 20px;
+}
+.single-div-text > button{
+    font-size: 15px;
+}
+.single-div-text > p{
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+}
+}
